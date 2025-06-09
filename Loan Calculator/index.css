@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #00416A, #E4E5E6);
+    padding: 20px;
+}
+
+.calculator {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 450px;
+}
+
+.calculator h2 {
+    text-align: center;
+    color: #00416A;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: 500;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #00416A;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    background: #00416A;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #002d4a;
+}
+
+.result {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    display: none;
+}
+
+.result h3 {
+    color: #00416A;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.result p {
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    color: #555;
+}
+
+.result span {
+    font-weight: 600;
+    color: #00416A;
+}
+
+@media (max-width: 480px) {
+    .calculator {
+        padding: 1.5rem;
+    }
+
+    .calculator h2 {
+        font-size: 1.5rem;
+    }
+
+    .input-group input {
+        padding: 10px;
+    }
+}
