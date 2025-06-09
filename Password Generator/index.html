@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- Title & Favicon -->
+    <title>Password Generator</title>
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+
+    <!-- External CSS Linking -->
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <!-- Main Container -->
+    <div class="main" id="main">
+
+        <!-- Heading -->
+        <span class="heading" id="heading">
+            <h1>PASSWORD GENERATOR</h1>
+            <hr>
+        </span>
+
+        
+        <!-- Password Length Input-->
+        <span class="length">
+            <label for="passwordLength">PASSWORD LENGTH</label>
+            <input type="text" id="passwordLength">
+        </span>
+
+        
+        <!-- Other Parameters -->
+        <div class="other-parameters" id="other-parameter">
+
+            <!-- Uppercase -->
+            <span>
+                <input type="checkbox" id="uppercase">
+                <label for="uppercase">Uppercase</label>
+            </span>
+
+            <!-- Numbers -->
+            <span>
+                <input type="checkbox" id="number">
+                <label for="number">Number</label>
+            </span>
+
+            <!-- Lowercase -->
+            <span>
+                <input type="checkbox" id="lowercase">
+                <label for="lowercase">Lowercase</label>
+            </span>
+
+            <!-- Symbols -->
+            <span>
+                <input type="checkbox" id="symbols">
+                <label for="symbols">Symbols</label>
+            </span>
+        </div>
+
+        
+        <!-- Generate Password Button-->
+        <span class="generatePassword">
+            <button id="generatePassword">GENERATE PASSWORD</button>
+        </span>
+
+        
+        <!-- Password Output -->
+        <span class="output" id="output">
+            <label for="passwordOutput">PASSWORD OUTPUT</label>
+            <input type="text" id="passwordOutput" disabled>
+        </span>
+
+        <!-- Copy password Button -->
+        <span class="copyPassword">
+            <button id="copyPassword">COPY PASSWORD</button>
+        </span>
+
+        <!-- Save Password Button -->
+        <span class="savePassword">
+            <button id="savePassword">SAVE PASSWORD</button>
+        </span>
+
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
