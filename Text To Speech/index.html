@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    
+    <!-- Title & Favicon -->
+    <title>Text To Speech</title>
+    <link rel="icon" type="image/svg" href="logo.svg" />
+    
+    <!-- External CSS Linking -->
+    <link rel="stylesheet" href="index.css">
+          
+    <!-- Importing Google Fonts -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+    </style>
+    
+    <!-- Open Graph Meta Tags for Social Media Preview -->
+    <meta property="og:title" content="Text To Speech">
+    <meta property="og:description" content="A Text-To-Speech converter website 🚀.">
+    <meta property="og:image" content="https://abhinavkumar2369.github.io/Text-To-Speech/logo.png">
+    <meta property="og:url" content="https://abhinavkumar2369.github.io/Text-To-Speech/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Text To Speech">
+</head>
+
+<body>
+    <main>
+        <!-- Heading -->
+        <h1 class="heading">Text to Speech <img src="logo.svg" alt="TTS Logo"></h1>
+
+        <div class="content-wrapper">
+            <!-- Left Panel -->
+            <div class="left-panel">
+                <!-- Enter Text -->
+                <div class="enter-text">
+                    <label for="text">Enter Text:</label>
+                    <textarea name="text" id="text" placeholder="Enter text to convert into speech..." rows="8"></textarea>
+                    <div class="char-count">
+                        <span id="charCount">0</span> characters
+                    </div>
+                </div>
+                
+                <!-- Control Buttons -->
+                <div class="buttons">
+                    <div class="button primary" id="playBtn">Convert To Speech</div>
+                    <div class="button secondary" id="pauseBtn">Pause</div>
+                    <div class="button secondary" id="stopBtn">Stop</div>
+                </div>
+            </div>
+
+            <!-- Right Panel -->
+            <div class="right-panel">
+                <!-- Select Voice -->
+                <div class="select-voice">
+                    <label for="voice">Select Voice:</label>
+                    <select name="voice" id="voice">
+                        <option value="">Loading voices...</option>
+                    </select>
+                </div>
+
+                <!-- Voice Controls -->
+                <div class="voice-controls">
+                    <div class="control-group">
+                        <label for="rate">Speed: <span id="rateValue">1</span></label>
+                        <input type="range" id="rate" min="0.5" max="2" value="1" step="0.1">
+                    </div>
+                    
+                    <div class="control-group">
+                        <label for="pitch">Pitch: <span id="pitchValue">1</span></label>
+                        <input type="range" id="pitch" min="0.5" max="2" value="1" step="0.1">
+                    </div>
+                    
+                    <div class="control-group">
+                        <label for="volume">Volume: <span id="volumeValue">1</span></label>
+                        <input type="range" id="volume" min="0" max="1" value="1" step="0.1">
+                    </div>
+                </div>
+
+                <!-- Audio Visualizer -->
+                <div class="audio-visualizer">
+                    <div class="visualizer-title">Audio Status</div>
+                    <div class="wave-container">
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- JavaScript -->
+    <script src="index.js"></script>
+</body>
+
+</html>
