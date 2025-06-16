@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  
+  <head>
+      ` <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+        <!-- Title & Favicon -->
+        <title>Weather App</title>
+        <link rel="icon" type="image/svg+xml" href="/Images/logo.svg" />
+
+        <!-- External CSS Linking -->
+        <link rel="stylesheet" href="index.css">
+
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+      
+    </head>
+
+
+    <body>
+
+        <div class="container">
+            <div class="weather-app">
+
+                <!-- Search Box -->
+                <div class="search-box">
+                    <i class="fas fa-location-dot"></i>
+                    <input type="text" placeholder="Enter your location" id="city-input">
+                    <button id="search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+
+                <!-- Weather Box -->
+                <div class="weather-box">
+                    <div class="weather-info">
+
+                        <h2 id="city">Weather in City</h2>
+                        <div class="date-time" id="date-time">Loading...</div>
+                        
+                        <div class="weather-details">
+                            <img alt="" src="Images/clear.svg" id="weather-icon">
+                            <h1 id="temperature">--°C</h1>
+                            <p id="description">Description</p>
+                        </div>
+
+                        <!-- Additional Info -->
+                        <div class="additional-info">
+
+                            <!-- Humidity -->
+                            <div class="info-item">
+                                <i class="fas fa-water"></i>
+                                <div>
+                                    <span id="humidity">--%</span>
+                                    <p>Humidity</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Wind Speed -->
+                            <div class="info-item">
+                                <i class="fas fa-wind"></i>
+                                <div>
+                                    <span id="wind-speed">-- km/h</span>
+                                    <p>Wind Speed</p>
+                                </div>
+                            </div>
+
+                            <!-- Feels Like -->
+                            <div class="info-item">
+                                <i class="fas fa-temperature-high"></i>
+                                <div>
+                                    <span id="feels-like">--°C</span>
+                                    <p>Feels Like</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    <script src="script.js"></script>
+    </body>
+
+</html>
