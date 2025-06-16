@@ -1,0 +1,251 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    overflow: hidden;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.container {
+    width: 95%;
+    max-width: 500px;
+    padding: 20px;
+}
+
+.weather-app {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.weather-app:hover {
+    transform: translateY(-5px);
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #f0f3f6;
+    padding: 0.8rem;
+    border-radius: 50px;
+    margin-bottom: 2rem;
+    border: 1px solid #e0e5eb;
+}
+
+.search-box i {
+    color: #5b6571;
+    font-size: 1.2rem;
+    margin-left: 10px;
+}
+
+.search-box input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #2c3e50;
+    font-size: 1rem;
+    padding: 0.5rem;
+}
+
+.search-box input::placeholder {
+    color: #94a3b8;
+}
+
+.search-box button {
+    background: #ffffff;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: white;
+}
+
+@media screen  and (max-width:578px){
+    .search-box button{
+        display: none;
+    }
+}
+.search-box button:hover {
+    background: #6d28d9;
+    transform: scale(1.05);
+}
+
+.weather-info {
+    text-align: center;
+    color: #1e293b;
+}
+
+.weather-info h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #1e293b;
+}
+
+.date-time {
+    color: #64748b;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.weather-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.weather-details img {
+    width: 150px;
+    height: 150px;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.weather-details img:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 6px 8px rgba(0, 0, 0, 0.15)) 
+           contrast(1.2) 
+           brightness(1.1);
+}
+
+.icon-container {
+    position: relative;
+    padding: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin: 10px 0;
+}
+.weather-details h1 {
+    font-size: 3.5rem;
+    color: #1e293b;
+}
+
+.weather-details p {
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    color: #64748b;
+}
+
+.additional-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    background: #f8fafc;
+    border-radius: 15px;
+    padding: 1.5rem;
+    border: 1px solid #d1e0f3;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.info-item i {
+    font-size: 1.5rem;
+    color: #7c3aed;
+}
+
+.info-item span {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.info-item p {
+    font-size: 0.8rem;
+    color: #64748b;
+}
+
+@media (max-width: 400px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .weather-app {
+        padding: 1.5rem;
+    }
+    
+    .weather-details h1 {
+        font-size: 2.5rem;
+    }
+    
+    .additional-info {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+
+.clear-sky-day {
+    background: linear-gradient(135deg, #4BA3FF 0%, #87CEEB 100%);
+}
+
+.clear-sky-night {
+    background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
+}
+
+.partly-cloudy-day {
+    background: linear-gradient(135deg, #63a4ff 0%, #83eaf1 100%);
+}
+
+.partly-cloudy-night {
+    background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+}
+
+.cloudy {
+    background: linear-gradient(135deg, #BBD2C5 0%, #536976 100%);
+}
+
+.rain {
+    background: linear-gradient(135deg, #616161 0%, #9bc5c3 100%);
+}
+
+.thunderstorm {
+    background: linear-gradient(135deg, #232526 0%, #414345 100%);
+}
+
+.snow {
+    background: linear-gradient(135deg, #E6DADA 0%, #274046 100%);
+}
+
+.mist {
+    background: linear-gradient(135deg, #757F9A 0%, #D7DDE8 100%);
+}
+
+.default {
+    background: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+}
