@@ -1,0 +1,214 @@
+body{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: #5337dd;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+
+
+/* ------ Box Sizing Property ------ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box !important;
+}
+
+
+
+
+#main{
+    max-width: 600px;
+    width: 90%;
+    padding: 30px 20px;
+    border-radius: 12px;
+    background-color: white;
+}
+
+
+
+
+/* -------- Quote of the Day ----------*/
+#main h1{
+    width: 100%;
+    margin: 0px;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.9rem;
+    font-weight: 600;
+    word-spacing: 2px;
+    letter-spacing: 0.5px;
+    color: #3c3c3c;
+}
+
+
+
+
+/* ----------  Quote ----------- */
+.quote {
+    width: 100%;
+    height: fit-content;
+    display: block;
+    position: relative;
+    margin-bottom: 15px;
+    line-height: 25px;
+    padding: 10px 20px 10px 25px;
+    text-align: center;
+    letter-spacing: 0.3px;
+    word-spacing: 3px;
+    font-size: 1.1rem;
+    font-family: 'poppins',sans-serif;
+    font-weight: 500;
+}
+.quote i:nth-child(1){
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+.quote i:nth-child(2){
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+
+
+
+
+.author{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    font-family: 'poppins',sans-serif;
+    font-style: italic;
+}
+
+
+
+
+/* ------------- HR Line --------------*/
+.hr{
+    display: block;
+    margin: 30px 0px 30px;
+}
+.hr hr{
+    border: 1px solid #4e4e4e;
+}
+
+
+
+
+/* -------------- Sharing ---------------*/
+.sharing{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+
+/* --- Sharing Button ---*/
+.sharing .buttons {
+    width: fit-content;
+}
+
+.sharing .buttons > span{
+    border: 2px solid;
+    border-color: #5337dd;
+    padding: 8px 10px;
+    border-radius: 50%;
+    margin: 0px 5px;
+    color: #5337dd;
+}
+
+.sharing .buttons > span:hover{
+    background-color: #5337dd;
+    color: white;
+    cursor: pointer;
+}
+
+
+
+
+/* --- Sharing Next ---*/
+.sharing .next{
+    padding: 10px 20px;
+    background-color: #5337dd;
+    color: white;
+    border-radius: 25px;
+    font-weight: 400;
+}
+
+.sharing .next:hover{
+    cursor: pointer;
+    transition: 0.3s ease;
+    scale: 1.05;
+}
+
+
+.buttons span {
+    transition: all 0.3s ease;
+}
+
+.buttons span:active {
+    transform: scale(0.95);
+}
+
+
+.buttons span {
+    position: relative;
+}
+
+.buttons span::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 4px 8px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    border-radius: 4px;
+    font-size: 12px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.class::after {
+    content: 'Speak';
+}
+
+.copy::after {
+    content: 'Copy';
+}
+
+.twitter::after {
+    content: 'Tweet';
+}
+
+.buttons span:hover::after {
+    opacity: 1;
+}
+
+@keyframes success {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.success {
+    animation: success 0.3s ease-in-out;
+}
