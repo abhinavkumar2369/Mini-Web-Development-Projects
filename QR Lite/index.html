@@ -4,30 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QR Code Generator</title>
+    <title>QR Lite</title>
+    <meta name="description" content="Generate beautiful QR codes instantly with QR Lite - Fast, secure, and professional QR code generator">
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     
     <!-- External CSS Linking -->
     <link rel="stylesheet" href="index.css">
 </head>
 
-<body>
-    <div class="container">
-        <h1>QR Code Generator</h1>
+<body>    <div class="container">
+        <h1>QR Lite</h1>
         
         <div class="input-group">
             <label for="text-input">Enter URL or Text:</label>
-            <input type="text" id="text-input" placeholder="https://example.com or your text here">
+            <input type="text" id="text-input" placeholder="https://example.com or your text here" autocomplete="off">
+            <div class="error-message" id="error-message">Please enter a valid URL or text</div>
         </div>
         
         <div class="button-group">
-            <button class="generate-btn" onclick="generateQRCode()">Generate</button>
-            <button class="clear-btn" onclick="clearQRCode()">Clear</button>
+            <button class="generate-btn" onclick="generateQRCode()">
+                <span class="btn-text">Generate QR Code</span>
+            </button>
+            <button class="clear-btn" onclick="clearQRCode()">Clear All</button>
         </div>
         
         <div class="qr-container">
             <div id="qrcode"></div>
-            <button id="download-btn" onclick="downloadQRCode()">Download QR Code</button>
+            <button id="download-btn" onclick="downloadQRCode()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" style="vertical-align:middle;margin-right:8px;"><path d="M10 3v9m0 0l-3.5-3.5M10 12l3.5-3.5M4 15h12" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Download QR Code
+            </button>
         </div>
     </div>
 
