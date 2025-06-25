@@ -1,0 +1,265 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.converter-container {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(15px);
+    border-radius: 25px;
+    padding: 40px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+}
+
+.header {
+    margin-bottom: 40px;
+}
+
+.title {
+    font-size: 2.5em;
+    font-weight: bold;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #666;
+    font-size: 1.1em;
+}
+
+.converter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.input-group {
+    position: relative;
+}
+
+.input-row {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 15px;
+    padding: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.input-row:focus-within {
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.2);
+    transform: translateY(-2px);
+}
+
+.currency-select {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 15px 20px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+    min-width: 120px;
+    margin-right: 15px;
+}
+
+.currency-select option {
+    background: white;
+    color: #333;
+}
+
+.amount-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 1.2em;
+    padding: 15px;
+    background: transparent;
+    color: #333;
+}
+
+.amount-input::placeholder {
+    color: #999;
+}
+
+.swap-container {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.swap-btn {
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid rgba(102, 126, 234, 0.3);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #667eea;
+}
+
+.swap-btn:hover {
+    background: #667eea;
+    color: white;
+    transform: rotate(180deg) scale(1.1);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+.result-section {
+    margin-top: 30px;
+    padding: 25px;
+    background: linear-gradient(45deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+    border-radius: 20px;
+    border: 2px solid rgba(102, 126, 234, 0.2);
+}
+
+.result-label {
+    color: #666;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+.result-amount {
+    font-size: 2.2em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.exchange-rate {
+    color: #666;
+    font-size: 0.9em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rate-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.loading {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #ddd;
+    border-radius: 50%;
+    border-top-color: #667eea;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.error {
+    color: #e74c3c;
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+
+.popular-pairs {
+    margin-top: 30px;
+    padding-top: 25px;
+    border-top: 1px solid rgba(102, 126, 234, 0.2);
+}
+
+.popular-pairs h3 {
+    color: #666;
+    font-size: 1em;
+    margin-bottom: 15px;
+}
+
+.quick-convert {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 10px;
+}
+
+.quick-btn {
+    background: rgba(102, 126, 234, 0.1);
+    border: 1px solid rgba(102, 126, 234, 0.3);
+    border-radius: 10px;
+    padding: 10px 8px;
+    font-size: 0.8em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #667eea;
+}
+
+.quick-btn:hover {
+    background: rgba(102, 126, 234, 0.2);
+    transform: translateY(-2px);
+}
+
+.last-updated {
+    margin-top: 20px;
+    font-size: 0.8em;
+    color: #999;
+}
+
+@media (max-width: 600px) {
+    .converter-container {
+        padding: 25px;
+        margin: 10px;
+    }
+
+    .title {
+        font-size: 2em;
+    }
+
+    .input-row {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px;
+    }
+
+    .currency-select {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .amount-input {
+        text-align: center;
+    }
+
+    .result-amount {
+        font-size: 1.8em;
+    }
+
+    .exchange-rate {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+.flag-emoji {
+    font-size: 1.2em;
+    margin-right: 8px;
+}
