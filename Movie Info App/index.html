@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Info App</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎬 Movie Info App</h1>
+            <p>Search for movies and get information</p>
+        </header>
+
+        <div class="search-section">
+            <input type="text" id="searchInput" placeholder="Search for movies...">
+            <button id="searchBtn">Search</button>
+        </div>
+
+        <div class="movies-container" id="moviesContainer">
+            <!-- Movies will be displayed here -->
+        </div>
+
+        <div class="loading" id="loading" style="display: none;">
+            <p>Loading...</p>
+        </div>
+
+        <!-- Movie Details Modal -->
+        <div class="modal" id="movieModal" style="display: none;">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div id="movieDetails"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
