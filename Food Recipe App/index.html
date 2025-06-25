@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Collection</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🍳 Recipe Collection</h1>
+            <p>Discover and save your favorite recipes</p>
+        </div>
+
+        <div class="controls">
+            <div class="search-bar">
+                <input type="text" class="search-input" id="searchInput" placeholder="Search recipes...">
+                <button class="btn btn-primary" onclick="openAddModal()">Add Recipe</button>
+            </div>
+        </div>
+
+        <div class="recipes-grid" id="recipesGrid">
+            <!-- Recipes will be loaded here -->
+        </div>
+    </div>
+
+    <!-- Add Recipe Modal -->
+    <div class="modal" id="addModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Add New Recipe</h2>
+                <button class="close-btn" onclick="closeModal('addModal')">&times;</button>
+            </div>
+            <form id="addRecipeForm">
+                <div class="form-group">
+                    <label class="form-label">Recipe Name</label>
+                    <input type="text" class="form-input" id="recipeName" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Cooking Time (minutes)</label>
+                    <input type="number" class="form-input" id="cookingTime" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Servings</label>
+                    <input type="number" class="form-input" id="servings" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Ingredients (one per line)</label>
+                    <textarea class="form-input form-textarea" id="ingredients" placeholder="2 cups flour&#10;1 cup sugar&#10;3 eggs" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Instructions (one per line)</label>
+                    <textarea class="form-input form-textarea" id="instructions" placeholder="Preheat oven to 350°F&#10;Mix dry ingredients&#10;Add wet ingredients" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Description</label>
+                    <textarea class="form-input form-textarea" id="description" placeholder="A delicious recipe that..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Add Recipe</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- View Recipe Modal -->
+    <div class="modal" id="viewModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="viewTitle">Recipe Details</h2>
+                <button class="close-btn" onclick="closeModal('viewModal')">&times;</button>
+            </div>
+            <div id="viewContent">
+                <!-- Recipe details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
