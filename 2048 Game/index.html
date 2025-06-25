@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2048 - The Ultimate Number Game</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="game-layout">
+            <div class="left-section">
+                <header>
+                    <h1>2048</h1>
+                    <p class="subtitle">Join the tiles, get to 2048!</p>
+                </header>
+                
+                <div class="game-info">
+                    <div class="score-container">
+                        <div class="score-label">SCORE</div>
+                        <div id="score">0</div>
+                    </div>
+                    <div class="best-container">
+                        <div class="best-label">BEST</div>
+                        <div id="best">0</div>
+                    </div>
+                </div>
+                
+                <div class="controls">
+                    <button id="new-game-btn" class="btn btn-primary">New Game</button>
+                    <div class="instructions">
+                        <div class="instruction-content">
+                            <div class="instruction-text">
+                                <p><strong>HOW TO PLAY:</strong></p>
+                                <p>Use arrow keys to move tiles. When two tiles with the same number touch, they merge into one!</p>
+                            </div>
+                            <div class="key-hints">
+                                <div class="key-layout">
+                                    <div class="key-row top">
+                                        <div class="key">↑</div>
+                                    </div>
+                                    <div class="key-row middle">
+                                        <div class="key">←</div>
+                                        <div class="key">↓</div>
+                                        <div class="key">→</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="right-section">
+                <div class="game-container">
+                    <div id="board"></div>
+                    <div id="game-over-overlay" class="game-over hidden">
+                        <div class="game-over-text">
+                            <h2>Game Over!</h2>
+                            <p>Final Score: <span id="final-score">0</span></p>
+                            <button id="try-again-btn" class="btn">Try Again</button>
+                        </div>
+                    </div>
+                    <div id="win-overlay" class="win-overlay hidden">
+                        <div class="win-text">
+                            <h2>You Win!</h2>
+                            <p>You reached 2048!</p>
+                            <button id="continue-btn" class="btn">Continue</button>
+                            <button id="restart-btn" class="btn btn-secondary">New Game</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="index.js"></script>
+</body>
+</html>
