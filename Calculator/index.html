@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <!--Title & Favicon-->
+    <title>Web Calculator</title>
+    <link rel="shortcut icon" href="logo.svg" type="svg+xml">
+    
+    <!--External CSS linking-->
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="calculator-container">
+        <div class="calculator-card">
+            <div class="card-header">
+                <img src="whitelogo.svg" alt="Calculator Logo" class="header-logo">
+                <h2 class="header-title">CALCULATOR</h2>
+            </div>
+            
+            <div class="card-content">
+                <div class="output-display">
+                    <div id="expression" class="expression-text"></div>
+                    <div id="output" class="result-text">0</div>
+                </div>
+                
+                <div class="button-grid">
+                    <button class="btn btn-light" id="b-ce">CE</button>
+                    <button class="btn btn-light" id="b-c">C</button>
+                    <button class="btn btn-light" id="b-per">%</button>
+                    <button class="btn btn-medium" id="b-div">/</button>
+                    
+                    <button class="btn btn-default" id="b-7">7</button>
+                    <button class="btn btn-default" id="b-8">8</button>
+                    <button class="btn btn-default" id="b-9">9</button>
+                    <button class="btn btn-medium" id="b-mul">×</button>
+                    
+                    <button class="btn btn-default" id="b-4">4</button>
+                    <button class="btn btn-default" id="b-5">5</button>
+                    <button class="btn btn-default" id="b-6">6</button>
+                    <button class="btn btn-medium" id="b-">-</button>
+                    
+                    <button class="btn btn-default" id="b-1">1</button>
+                    <button class="btn btn-default" id="b-2">2</button>
+                    <button class="btn btn-default" id="b-3">3</button>
+                    <button class="btn btn-medium" id="b-add">+</button>
+                    
+                    <button class="btn btn-default" id="b-dot">.</button>
+                    <button class="btn btn-default" id="b-0">0</button>
+                    <button class="btn btn-default" id="b-u"></button>
+                    <button class="btn btn-dark" id="b-equal">=</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>

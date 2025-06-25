@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+    --violet-lightest: #f5f3ff;
+    --violet-light: #c4b5fd;
+    --violet-medium: #8b5cf6;
+    --violet-dark: #6d28d9;
+    --violet-darkest: #4c1d95;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.calculator-container {
+    width: 100%;
+    max-width: 420px;
+    padding: 20px;
+}
+
+.calculator-card {
+    background-color: white;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid var(--violet-light);
+    box-shadow: 0 10px 25px -5px rgba(124, 58, 237, 0.1), 0 8px 10px -6px rgba(124, 58, 237, 0.1);
+}
+
+.card-header {
+    background-color: var(--violet-dark);
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.header-logo {
+    height: 40px;
+    width: 40px;
+    margin-right: 8px;
+}
+
+.header-title {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.card-content {
+    padding: 24px;
+}
+
+.output-display {
+    background-color: var(--violet-lightest);
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 24px;
+    border: 1px solid var(--violet-light);
+}
+
+.expression-text {
+    text-align: right;
+    color: var(--violet-dark);
+    font-size: 18px;
+    margin-bottom: 4px;
+}
+
+.result-text {
+    text-align: right;
+    color: var(--violet-darkest);
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.btn {
+    width: 100%;
+    height: 60px;
+    border-radius: 12px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    border: 2px solid;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn:active {
+    transform: scale(0.96);
+}
+
+.btn-default {
+    background-color: rgba(196, 181, 253, 0.2);
+    color: var(--violet-darkest);
+    border-color: rgba(196, 181, 253, 0.4);
+}
+
+.btn-default:hover {
+    background-color: rgba(196, 181, 253, 0.3);
+    border-color: rgba(196, 181, 253, 0.6);
+}
+
+.btn-light {
+    background-color: rgba(196, 181, 253, 0.5);
+    color: var(--violet-darkest);
+    border-color: rgba(196, 181, 253, 0.7);
+    box-shadow: 0px 0px 3px 0px rgba(124, 58, 237, 0.3);
+}
+
+.btn-light:hover {
+    background-color: rgba(196, 181, 253, 0.6);
+    border-color: rgba(196, 181, 253, 0.8);
+}
+
+.btn-medium {
+    background-color: var(--violet-medium);
+    color: white;
+    border-color: #7c3aed;
+    box-shadow: 0px 0px 3px 0px var(--violet-medium);
+}
+
+.btn-medium:hover {
+    background-color: #7c3aed;
+    border-color: var(--violet-dark);
+}
+
+.btn-dark {
+    background-color: var(--violet-dark);
+    color: white;
+    border-color: #5b21b6;
+    box-shadow: 0px 0px 3px 0px var(--violet-dark);
+    font-weight: 700;
+}
+
+.btn-dark:hover {
+    background-color: #5b21b6;
+    border-color: var(--violet-darkest);
+}
+
+#b-u {
+    visibility: hidden;
+}
+
+@media screen and (max-width: 500px) {
+    .calculator-container {
+        padding: 10px;
+    }
+    
+    .btn {
+        height: 50px;
+        font-size: 1.3rem;
+    }
+}
