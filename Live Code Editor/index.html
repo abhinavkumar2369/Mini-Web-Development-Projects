@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Code Editor</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Editor Panel -->
+        <div class="editor-panel">
+            <div class="panel-header">
+                <h2 class="panel-title">Code Editor</h2>
+                <div class="editor-controls">
+                    <div class="editor-tabs">
+                        <button class="tab active" data-lang="html">
+                            HTML
+                        </button>
+                        <button class="tab" data-lang="css">
+                            CSS
+                        </button>
+                        <button class="tab" data-lang="js">
+                            JavaScript
+                        </button>
+                    </div>
+                    <div class="download-controls">
+                        <button class="control-btn" id="download-current" title="Download Current File">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+                            </svg>
+                        </button>
+                        <button class="control-btn" id="download-all" title="Download All Files">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="editor-content">
+                <div class="editor-wrapper">
+                    <div class="line-numbers" id="html-line-numbers">1</div>
+                    <textarea class="editor active html-editor" id="html-editor" 
+                              placeholder="<!-- Write your HTML here -->" 
+                              spellcheck="false"><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Preview</title>
+</head>
+<body>
+    <div class="welcome-container">
+        <h1>🚀 Welcome to Live Code Editor!</h1>
+        <p>Start editing to see live changes in real-time.</p>
+        <button id="myButton" class="demo-button">Click me!</button>
+        <div class="features">
+            <div class="feature">✨ Real-time preview</div>
+            <div class="feature">🎨 Beautiful UI</div>
+            <div class="feature">📱 Responsive design</div>
+        </div>
+    </div>
+</body>
+</html></textarea>
+                </div>
+
+                <div class="editor-wrapper">
+                    <div class="line-numbers" id="css-line-numbers">1</div>
+                    <textarea class="editor css-editor" id="css-editor" 
+                              placeholder="/* Write your CSS here */" 
+                              spellcheck="false">* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.welcome-container {
+    text-align: center;
+    max-width: 600px;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 20px;
+    background: linear-gradient(45deg, #fff, #f0f0f0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+}
+
+p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+.demo-button {
+    background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+    color: white;
+    border: none;
+    padding: 15px 35px;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-weight: 600;
+    box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
+    margin-bottom: 30px;
+}
+
+.demo-button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(255, 107, 107, 0.4);
+}
+
+.demo-button:active {
+    transform: translateY(-1px) scale(1.02);
+}
+
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.feature {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+@media (max-width: 768px) {
+    .features {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .welcome-container {
+        padding: 30px 20px;
+    }
+}</textarea>
+                </div>
+
+                <div class="editor-wrapper">
+                    <div class="line-numbers" id="js-line-numbers">1</div>
+                    <textarea class="editor js-editor" id="js-editor" 
+                              placeholder="// Write your JavaScript here" 
+                              spellcheck="false">document.addEventListener('DOMContentLoaded', function() {
+    console.log('🚀 Live Code Editor is ready!');
+    
+    const button = document.getElementById('myButton');
+    
+    if (button) {
+        let clickCount = 0;
+        
+        button.addEventListener('click', function() {
+            clickCount++;
+            
+            // Create a beautiful alert effect
+            const messages = [
+                '🎉 Hello from your live code editor!',
+                '✨ Amazing! You clicked again!',
+                '🚀 Keep coding, you\'re doing great!',
+                '💫 The possibilities are endless!',
+                '🎨 Create something beautiful!'
+            ];
+            
+            const message = messages[Math.min(clickCount - 1, messages.length - 1)];
+            
+            // Style changes with animation
+            this.style.background = `linear-gradient(45deg, #4ecdc4, #44a08d)`;
+            this.style.transform = 'scale(0.95)';
+            this.textContent = `Clicked ${clickCount} time${clickCount > 1 ? 's' : ''}!`;
+            
+            // Reset animation
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+            }, 150);
+            
+            // Show message
+            showNotification(message);
+        });
+    }
+    
+    // Custom notification function
+    function showNotification(message) {
+        const notification = document.createElement('div');
+        notification.textContent = message;
+        notification.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(76, 175, 80, 0.9);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            z-index: 1000;
+            font-family: inherit;
+            animation: slideIn 0.3s ease-out;
+        `;
+        
+        // Add keyframe animation
+        if (!document.querySelector('#notification-styles')) {
+            const style = document.createElement('style');
+            style.id = 'notification-styles';
+            style.textContent = `
+                @keyframes slideIn {
+                    from { transform: translateX(100%); opacity: 0; }
+                    to { transform: translateX(0); opacity: 1; }
+                }
+                @keyframes slideOut {
+                    from { transform: translateX(0); opacity: 1; }
+                    to { transform: translateX(100%); opacity: 0; }
+                }
+            `;
+            document.head.appendChild(style);
+        }
+        
+        document.body.appendChild(notification);
+        
+        // Remove notification after 3 seconds
+        setTimeout(() => {
+            notification.style.animation = 'slideOut 0.3s ease-in';
+            setTimeout(() => {
+                if (notification.parentNode) {
+                    notification.parentNode.removeChild(notification);
+                }
+            }, 300);
+        }, 3000);
+    }
+});</textarea>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Preview Panel -->
+        <div class="preview-panel">
+            <div class="panel-header">
+                <h2 class="panel-title">Live Preview</h2>
+                <div class="preview-controls">
+                    <button class="control-btn" id="refresh-btn" title="Refresh Preview">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4c-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/>
+                        </svg>
+                    </button>
+                    <button class="control-btn" id="fullscreen-btn" title="Toggle Fullscreen">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="preview-content">
+                <iframe id="preview" sandbox="allow-scripts allow-same-origin allow-forms"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Toggle Button -->
+    <button class="mobile-toggle" id="mobile-toggle">
+        <svg class="hamburger-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path class="top-line" d="M3 6h18v2H3V6z"/>
+            <path class="middle-line" d="M3 11h18v2H3v-2z"/>
+            <path class="bottom-line" d="M3 16h18v2H3v-2z"/>
+        </svg>
+        <svg class="close-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="display: none;">
+            <path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41z"/>
+        </svg>
+    </button>
+
+    <script src="index.js"></script>
+</body>
+</html>
