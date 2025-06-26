@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Compiler</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/skulpt@0.11.1/dist/skulpt.min.js"></script>
+    <script src="https://unpkg.com/skulpt@0.11.1/dist/skulpt-stdlib.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <i class="fab fa-python"></i>
+                <h1>Python Compiler</h1>
+            </div>
+            <div class="controls">
+                <button id="runBtn" class="btn run-btn">
+                    <i class="fas fa-play"></i> Run Code
+                </button>
+                <button id="clearBtn" class="btn clear-btn">
+                    <i class="fas fa-trash"></i> Clear
+                </button>
+                <button id="exampleBtn" class="btn example-btn">
+                    <i class="fas fa-code"></i> Load Example
+                </button>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <div class="editor-section">
+                <div class="section-header">
+                    <h3><i class="fas fa-edit"></i> Python Code Editor</h3>
+                    <div class="editor-controls">
+                        <span class="line-count" id="lineCount">Lines: 1</span>
+                    </div>
+                </div>
+                <div class="code-editor">
+                    <textarea id="codeEditor" placeholder="# Write your Python code here...
+print('Hello, World!')
+
+# Example: Simple calculator
+def add(a, b):
+    return a + b
+
+result = add(5, 3)
+print(f'5 + 3 = {result}')
+
+# Example: List operations
+numbers = [1, 2, 3, 4, 5]
+print(f'Numbers: {numbers}')
+print(f'Sum: {sum(numbers)}')"></textarea>
+                </div>
+            </div>
+
+            <div class="output-section">
+                <div class="section-header">
+                    <h3><i class="fas fa-terminal"></i> Output</h3>
+                    <div class="output-controls">
+                        <button id="clearOutputBtn" class="btn-small">
+                            <i class="fas fa-eraser"></i> Clear Output
+                        </button>
+                    </div>
+                </div>
+                <div class="output-container">
+                    <pre id="output"></pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="status-bar">
+            <div class="status-info">
+                <span id="status">Ready</span>
+            </div>
+            <div class="execution-time">
+                <span id="execTime"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Examples Modal -->
+    <div id="examplesModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Python Code Examples</h3>
+                <span class="close">&times;</span>
+            </div>
+            <div class="examples-grid">
+                <div class="example-card" data-example="hello">
+                    <h4>Hello World</h4>
+                    <p>Basic print statement</p>
+                </div>
+                <div class="example-card" data-example="calculator">
+                    <h4>Calculator</h4>
+                    <p>Simple arithmetic operations</p>
+                </div>
+                <div class="example-card" data-example="fibonacci">
+                    <h4>Fibonacci Sequence</h4>
+                    <p>Generate Fibonacci numbers</p>
+                </div>
+                <div class="example-card" data-example="sorting">
+                    <h4>Sorting Algorithm</h4>
+                    <p>Bubble sort implementation</p>
+                </div>
+                <div class="example-card" data-example="loops">
+                    <h4>Loops & Conditions</h4>
+                    <p>Control flow examples</p>
+                </div>
+                <div class="example-card" data-example="functions">
+                    <h4>Functions</h4>
+                    <p>Function definitions and calls</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2025 Python Compiler. Built with ❤️ using Skulpt</p>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
