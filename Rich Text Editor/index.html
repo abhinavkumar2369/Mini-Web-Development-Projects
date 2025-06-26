@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rich Text Editor</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><i class="fas fa-edit"></i> Rich Text Editor</h1>
+        </div>
+        
+        <div class="editor-container">
+            <div class="toolbar">
+                <!-- File Operations -->
+                <div class="toolbar-group">
+                    <button class="toolbar-btn" onclick="newDocument()" title="New Document">
+                        <i class="fas fa-file"></i>
+                    </button>
+                    <button class="toolbar-btn" onclick="openFile()" title="Open File">
+                        <i class="fas fa-folder-open"></i>
+                    </button>
+                    <button class="toolbar-btn" onclick="saveFile()" title="Save File">
+                        <i class="fas fa-save"></i>
+                    </button>
+                    <input type="file" id="fileInput" accept=".txt,.html" style="display: none;">
+                </div>
+
+                <div class="separator"></div>
+
+                <!-- Undo/Redo -->
+                <div class="toolbar-group">
+                    <button class="toolbar-btn" onclick="undoAction()" title="Undo">
+                        <i class="fas fa-undo"></i>
+                    </button>
+                    <button class="toolbar-btn" onclick="redoAction()" title="Redo">
+                        <i class="fas fa-redo"></i>
+                    </button>
+                </div>
+
+                <div class="separator"></div>
+
+                <!-- Text Formatting -->
+                <div class="toolbar-group">
+                    <button class="toolbar-btn" onclick="formatText('bold')" title="Bold">
+                        <i class="fas fa-bold"></i>
+                    </button>
+                    <button class="toolbar-btn" onclick="formatText('italic')" title="Italic">
+                        <i class="fas fa-italic"></i>
+                    </button>
+                    <button class="toolbar-btn" onclick="formatText('underline')" title="Underline">
+                        <i class="fas fa-underline"></i>
+                    </button>
+                    <button class="toolbar-btn" onclick="formatText('strikeThrough')" title="Strikethrough">
+                        <i class="fas fa-strikethrough"></i>
+                    </button>
+                </div>
+
+                <div class="separator"></div>
+
+                <!-- Font Size and Family -->
+                <div class="toolbar-group">
+                    <select id="fontFamily" onchange="changeFontFamily()" title="Font Family">
+                        <option value="Arial">Arial</option>
+                        <option value="Times New Roman">Times New Roman</option>
+                        <option value="Courier New">Courier New</option>
+                        <option value="Georgia">Georgia</option>
+                        <option value="Verdana">Verdana</option>
+                        <option value="Comic Sans MS">Comic Sans MS</option>
+                    </select>
+                    <select id="fontSize" onchange="changeFontSize()" title="Font Size">
+                        <option value="8">8</option>
+                        <option value="10">10</option>
+                        <option value="12">12</option>
+                        <option value="14" selected>14</option>
+                        <option value="16">16</option>
+                        <option value="18">18</option>
+                        <option value="20">20</option>
+                        <option value="24">24</option>
+                        <option value="28">28</option>
+                        <option value="32">32</option>
+                        <option value="36">36</option>
+                    </select>
+                </div>
+
+                <div class="separator"></div>
+
+                <!-- Text Color -->
+                <div class="toolbar-group">
+                    <input type="color" id="textColor" value="#000000" onchange="changeTextColor()" title="Text Color">
+                    <input type="color" id="backgroundColor" value="#ffffff" onchange="changeBackgroundColor()" title="Background Color">
+                </div>
+
+                <div class="separator"></div>
+
+                <!-- Text Alignment -->
+                <div class="toolbar-group">
+                    <button class="toolbar-btn" onclick="alignText('left')" title="Align Left">
+                        <i class="fas fa-align-left"></i>
+                    </button>
+                    <button class="toolbar-btn" onclick="alignText('center')" title="Align Center">
+                        <i class="fas fa-align-center"></i>
+                    </button>
+                    <button class="toolbar-btn" onclick="alignText('right')" title="Align Right">
+                        <i class="fas fa-align-right"></i>
+                    </button>
+                    <button class="toolbar-btn" onclick="alignText('justify')" title="Justify">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+                </div>
+
+                <div class="separator"></div>
+
+                <!-- Lists -->
+                <div class="toolbar-group">
+                    <button class="toolbar-btn" onclick="insertList('unordered')" title="Bullet List">
+                        <i class="fas fa-list-ul"></i>
+                    </button>
+                    <button class="toolbar-btn" onclick="insertList('ordered')" title="Numbered List">
+                        <i class="fas fa-list-ol"></i>
+                    </button>
+                </div>
+
+                <div class="separator"></div>
+
+                <!-- Insert Elements -->
+                <div class="toolbar-group">
+                    <button class="toolbar-btn" onclick="insertLink()" title="Insert Link">
+                        <i class="fas fa-link"></i>
+                    </button>
+                    <button class="toolbar-btn" onclick="insertImage()" title="Insert Image">
+                        <i class="fas fa-image"></i>
+                    </button>
+                    <button class="toolbar-btn" onclick="insertTable()" title="Insert Table">
+                        <i class="fas fa-table"></i>
+                    </button>
+                </div>
+
+                <div class="separator"></div>
+
+                <!-- View Options -->
+                <div class="toolbar-group">
+                    <button class="toolbar-btn" onclick="toggleFullscreen()" title="Toggle Fullscreen">
+                        <i class="fas fa-expand"></i>
+                    </button>
+                    <button class="toolbar-btn" onclick="toggleDarkMode()" title="Toggle Dark Mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="editor-wrapper">
+                <div class="editor-content">
+                    <div id="editor" contenteditable="true" spellcheck="true">
+                        <p>Welcome to the Rich Text Editor! Start typing here...</p>
+                        <p>You can format your text using the toolbar above. Try making text <strong>bold</strong>, <em>italic</em>, or <u>underlined</u>.</p>
+                        <p>Create lists, insert links, change colors, and much more!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="status-bar">
+                <span id="wordCount">Words: 0</span>
+                <span id="charCount">Characters: 0</span>
+                <span id="lineCount">Lines: 0</span>
+                <span id="cursorPosition">Line 1, Column 1</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
