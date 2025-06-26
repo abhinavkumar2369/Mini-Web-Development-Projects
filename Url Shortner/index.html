@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShortLink - URL Shortener</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">ShortLink</div>
+            <div class="subtitle">Transform long URLs into short, manageable links</div>
+        </div>
+
+        <form class="url-form" id="urlForm">
+            <div class="form-group">
+                <div class="input-container">
+                    <input 
+                        type="url" 
+                        class="url-input" 
+                        id="urlInput" 
+                        placeholder="Enter your long URL here..."
+                        required
+                    >
+                </div>
+            </div>
+            <button type="submit" class="shorten-btn" id="shortenBtn">
+                Shorten URL
+            </button>
+        </form>
+
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <div>Shortening your URL...</div>
+        </div>
+
+        <div class="error-message" id="errorMessage"></div>
+
+        <div class="result-container" id="resultContainer">
+            <div class="result-title">Your shortened URL is ready!</div>
+            <div class="short-url-container">
+                <input type="text" class="short-url" id="shortUrl" readonly>
+                <button class="copy-btn" id="copyBtn">Copy</button>
+            </div>
+        </div>
+
+        <div class="stats" style="display: none;" id="stats">
+            <div class="stat-item">
+                <div class="stat-number" id="totalUrls">0</div>
+                <div class="stat-label">URLs Shortened</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="totalClicks">0</div>
+                <div class="stat-label">Total Clicks</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="avgClicks">0</div>
+                <div class="stat-label">Avg per URL</div>
+            </div>
+        </div>
+
+        <div class="url-list" id="urlList" style="display: none;">
+            <div class="url-list-title">Recent URLs</div>
+            <div id="urlItems"></div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
