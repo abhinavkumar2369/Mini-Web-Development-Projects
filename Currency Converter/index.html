@@ -7,113 +7,89 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <div class="converter-container">
-        <div class="header">
-            <h1 class="title">Currency Converter</h1>
-            <p class="subtitle">Real-time exchange rates</p>
-        </div>
-
-        <form class="converter-form" id="converter-form">
-            <div class="input-group">
-                <div class="input-row">
-                    <select class="currency-select" id="from-currency">
-                        <option value="USD">🇺🇸 USD</option>
-                        <option value="EUR">🇪🇺 EUR</option>
-                        <option value="GBP">🇬🇧 GBP</option>
-                        <option value="JPY">🇯🇵 JPY</option>
-                        <option value="CAD">🇨🇦 CAD</option>
-                        <option value="AUD">🇦🇺 AUD</option>
-                        <option value="CHF">🇨🇭 CHF</option>
-                        <option value="CNY">🇨🇳 CNY</option>
-                        <option value="INR">🇮🇳 INR</option>
-                        <option value="BRL">🇧🇷 BRL</option>
-                        <option value="RUB">🇷🇺 RUB</option>
-                        <option value="KRW">🇰🇷 KRW</option>
-                        <option value="SGD">🇸🇬 SGD</option>
-                        <option value="HKD">🇭🇰 HKD</option>
-                        <option value="MXN">🇲🇽 MXN</option>
-                    </select>
-                    <input 
-                        type="number" 
-                        class="amount-input" 
-                        id="from-amount" 
-                        placeholder="Enter amount"
-                        min="0"
-                        step="0.01"
-                        value="1"
-                    >
-                </div>
-            </div>
-
-            <div class="swap-container">
-                <button type="button" class="swap-btn" id="swap-btn" title="Swap currencies">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M7 16V4m0 0L3 8m4-4l4 4M17 8v12m0 0l4-4m-4 4l-4-4"/>
+    <div class="converter-wrapper">
+        <div class="converter-container">
+            <div class="header">
+                <div class="header-icon">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
+                        <circle cx="12" cy="12" r="10" fill="#667eea"/>
+                        <path d="M12 8v4M8 12h8M12 16h.01" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M9 9h6v6H9z" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
-                </button>
-            </div>
-
-            <div class="input-group">
-                <div class="input-row">
-                    <select class="currency-select" id="to-currency">
-                        <option value="USD">🇺🇸 USD</option>
-                        <option value="EUR" selected>🇪🇺 EUR</option>
-                        <option value="GBP">🇬🇧 GBP</option>
-                        <option value="JPY">🇯🇵 JPY</option>
-                        <option value="CAD">🇨🇦 CAD</option>
-                        <option value="AUD">🇦🇺 AUD</option>
-                        <option value="CHF">🇨🇭 CHF</option>
-                        <option value="CNY">🇨🇳 CNY</option>
-                        <option value="INR">🇮🇳 INR</option>
-                        <option value="BRL">🇧🇷 BRL</option>
-                        <option value="RUB">🇷🇺 RUB</option>
-                        <option value="KRW">🇰🇷 KRW</option>
-                        <option value="SGD">🇸🇬 SGD</option>
-                        <option value="HKD">🇭🇰 HKD</option>
-                        <option value="MXN">🇲🇽 MXN</option>
-                    </select>
-                    <input 
-                        type="number" 
-                        class="amount-input" 
-                        id="to-amount" 
-                        placeholder="Converted amount"
-                        readonly
-                    >
                 </div>
+                <h1>Currency Converter</h1>
+                <p class="subtitle">Convert currencies with real-time rates</p>
             </div>
-        </form>
+            <form id="converter-form">
+                <div class="converter-body">
+                    <div class="converter-panel">
+                        <label for="from-currency">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke="#6B7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            From
+                        </label>
+                        <select class="currency-select" id="from-currency">
+                            <option value="USD" selected>🇺🇸 USD</option>
+                            <option value="EUR">🇪🇺 EUR</option>
+                            <option value="GBP">🇬🇧 GBP</option>
+                            <option value="JPY">🇯🇵 JPY</option>
+                            <option value="INR">🇮🇳 INR</option>
+                            <option value="AUD">🇦🇺 AUD</option>
+                            <option value="CAD">🇨🇦 CAD</option>
+                            <option value="CHF">🇨🇭 CHF</option>
+                            <option value="CNY">🇨🇳 CNY</option>
+                        </select>
+                        <input type="number" class="amount-input" id="from-amount" value="1.00" min="0">
+                    </div>
 
-        <div class="result-section" id="result-section" style="display: none;">
-            <div class="result-label">Converted Amount</div>
-            <div class="result-amount" id="result-amount">0.00</div>
-            <div class="exchange-rate">
-                <div class="rate-info">
-                    <span id="rate-display">1 USD = 0.85 EUR</span>
+                    <div class="swap-panel">
+                        <button type="button" id="swap-btn" title="Swap currencies">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <path d="M8 3L4 7l4 4M4 7h16M16 21l4-4-4-4M20 17H4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="converter-panel">
+                        <label for="to-currency">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            To
+                        </label>
+                        <select class="currency-select" id="to-currency">
+                            <option value="USD">🇺🇸 USD</option>
+                            <option value="EUR" selected>🇪🇺 EUR</option>
+                            <option value="GBP">🇬🇧 GBP</option>
+                            <option value="JPY">🇯🇵 JPY</option>
+                            <option value="INR">🇮🇳 INR</option>
+                            <option value="AUD">🇦🇺 AUD</option>
+                            <option value="CAD">🇨🇦 CAD</option>
+                            <option value="CHF">🇨🇭 CHF</option>
+                            <option value="CNY">🇨🇳 CNY</option>
+                        </select>
+                        <input type="text" class="amount-input" id="to-amount" readonly>
+                    </div>
                 </div>
-                <div id="loading-indicator" style="display: none;">
-                    <span class="loading"></span>
+                <div class="result-section" id="result-section">
+                    <div class="rate-container">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="#F59E0B"/>
+                        </svg>
+                        <div id="rate-display"></div>
+                    </div>
+                    <div class="update-container">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                            <circle cx="12" cy="12" r="10" stroke="#9CA3AF" stroke-width="2"/>
+                            <polyline points="12,6 12,12 16,14" stroke="#9CA3AF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <div id="last-updated"></div>
+                    </div>
                 </div>
-            </div>
-            <div class="error" id="error-message" style="display: none;"></div>
-        </div>
-
-        <div class="popular-pairs">
-            <h3>Quick Convert</h3>
-            <div class="quick-convert">
-                <button class="quick-btn" onclick="quickConvert('USD', 'EUR')">USD → EUR</button>
-                <button class="quick-btn" onclick="quickConvert('EUR', 'USD')">EUR → USD</button>
-                <button class="quick-btn" onclick="quickConvert('GBP', 'USD')">GBP → USD</button>
-                <button class="quick-btn" onclick="quickConvert('USD', 'JPY')">USD → JPY</button>
-                <button class="quick-btn" onclick="quickConvert('USD', 'INR')">USD → INR</button>
-                <button class="quick-btn" onclick="quickConvert('EUR', 'GBP')">EUR → GBP</button>
-            </div>
-        </div>
-
-        <div class="last-updated" id="last-updated">
-            Exchange rates updated daily
+            </form>
         </div>
     </div>
-
     <script src="index.js"></script>
 </body>
 </html>
