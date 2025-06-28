@@ -1,20 +1,25 @@
-# Text-To-Speech Converter
+# Text To Speech
+Convert written text into natural-sounding speech with voice options.
+Features multiple voice selections and speech rate controls for better accessibility.
 
-A simple web application that converts text to speech using the Web Speech API.
-
-<!------------------------------------------------->
 
 ## Features
-
-- Convert text to speech
-- Voice selection
+- Text-to-speech conversion
+- Multiple voice options and languages
+- Adjustable speech rate and volume
 - Play, pause, and stop controls
-- Speed, pitch, and volume controls
+- Speed and pitch controls
 - Responsive design
 
-<!------------------------------------------------->
 
-## Screenshot 🖼️
-
+## Screenshot
 ![screenshot](screenshot.png)
+
+
+## Technologies Used
+- HTML5
+- CSS3
+- JavaScript
+- Web Speech API
+- Speech synthesis functionality
 

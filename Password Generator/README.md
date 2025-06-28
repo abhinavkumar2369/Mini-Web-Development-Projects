@@ -1,23 +1,31 @@
-## Overview ✨ 
+# Password Generator
 
-- This is a simple web-based password generator that allows users to generate strong and secure passwords based on their preferences.
-- Users can specify the length of the password and choose whether to include uppercase letters, lowercase letters, numbers, and symbols.
+Simple and effective password generator for creating secure passwords.
+Generate random passwords with customizable length and character types.
 
+## Features
+- Customizable password length
+- Include/exclude character types
+- One-click password generation
+- Copy generated passwords to clipboard
+- Save passwords as text files
 
-<!------------------------------------------------->
-
-
-## Features 📈
-
-- Customize password length.
-- Include or exclude uppercase letters, lowercase letters, numbers, and symbols.
-- Generate random passwords instantly.
-- Copy generated passwords to the clipboard.
-- Save generated passwords as text files.
-
-
-<!------------------------------------------------->
-
-## Screenshot 🖼️
-
+## Screenshot
 ![screenshot](screenshot.png)
+
+## How to Use
+1. Select desired password length
+2. Choose which character types to include:
+   - Uppercase letters (A-Z)
+   - Lowercase letters (a-z)
+   - Numbers (0-9)
+   - Special characters (!@#$%^&*)
+3. Click "Generate" to create password
+4. Copy password to clipboard or save as file
+
+
+## Technologies Used
+- HTML5
+- CSS3
+- JavaScript
+- Random character generation algorithms

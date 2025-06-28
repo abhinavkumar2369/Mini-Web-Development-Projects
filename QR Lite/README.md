@@ -1,11 +1,18 @@
-## Overview ✨ 
+# QR Lite
 
-- This is a simple HTML, CSS, and JavaScript QR code generator.
-- Perfect for developers and hobbyists wanting to create QR codes with minimal setup and effort. Easy to use!
+Generate QR codes for text, URLs, and other data formats instantly.
+Lightweight QR code generator with download and sharing options.
 
+## Features
+- Generate QR codes for various data types
+- Download QR codes as images
+- Clean and simple interface
 
-<!------------------------------------------------->
-
-## Screenshot 🖼️
-
+## Screenshot
 ![screenshot](screenshot.png)
+
+## Technologies Used
+- HTML5
+- CSS3
+- JavaScript
+- QR Code generation library
