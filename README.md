@@ -21,7 +21,7 @@
 ## ➡️ 2048 Game
 A classic sliding puzzle game where you combine numbered tiles to reach the 2048 tile.
 Built with vanilla JavaScript, HTML, and CSS for smooth gameplay experience.
-**Features:**
+
 - Smooth tile animations and transitions
 - Score tracking and game over detection
 - Responsive design for mobile and desktop
@@ -33,7 +33,7 @@ Built with vanilla JavaScript, HTML, and CSS for smooth gameplay experience.
 ## ➡️ Calculator
 A modern calculator application with a clean interface for basic arithmetic operations.
 Features standard calculator functions with keyboard support and error handling.
-**Features:**
+
 - Basic arithmetic operations (+, -, ×, ÷)
 - Keyboard input support
 - Clear and delete functionality
@@ -45,7 +45,7 @@ Features standard calculator functions with keyboard support and error handling.
 ## ➡️ Currency Converter
 Real-time currency converter that fetches live exchange rates from API.
 Convert between multiple currencies with up-to-date conversion rates.
-**Features:**
+
 - Live exchange rates from reliable API
 - Support for multiple currencies
 - Clean and intuitive user interface
@@ -57,7 +57,7 @@ Convert between multiple currencies with up-to-date conversion rates.
 ## ➡️ Digital Analog Clock
 A beautiful dual-display clock showing both digital and analog time formats.
 Features customizable themes and real-time updates every second.
-**Features:**
+
 - Real-time analog and digital clock display
 - Multiple theme options
 - Responsive design with smooth animations
@@ -69,7 +69,7 @@ Features customizable themes and real-time updates every second.
 ## ➡️ Food Recipe App
 Discover and explore delicious recipes with detailed cooking instructions.
 Search through various cuisines and save your favorite recipes.
-**Features:**
+
 - Recipe search and filtering
 - Detailed ingredients and instructions
 - Save favorite recipes functionality
@@ -93,7 +93,7 @@ See your code changes instantly with live preview functionality.
 ## ➡️ Loan Calculator
 Calculate loan payments, interest rates, and repayment schedules easily.
 Helps users plan their finances with detailed loan breakdown information.
-**Features:**
+
 - Monthly payment calculations
 - Interest rate and principal breakdown
 - Amortization schedule display
@@ -105,7 +105,7 @@ Helps users plan their finances with detailed loan breakdown information.
 ## ➡️ Mini Music Player
 A compact music player with essential playback controls and playlist management.
 Features modern UI design with smooth playback and volume controls.
-**Features:**
+
 - Play, pause, skip, and volume controls
 - Progress bar with seek functionality
 - Playlist management interface
@@ -117,7 +117,7 @@ Features modern UI design with smooth playback and volume controls.
 ## ➡️ Movie Info App
 Search and discover movies with detailed information including ratings and reviews.
 Get comprehensive movie data from popular movie databases.
-**Features:**
+
 - Movie search with detailed information
 - Ratings, reviews, and cast details
 - Responsive grid layout for movie cards
@@ -130,7 +130,7 @@ Get comprehensive movie data from popular movie databases.
 ## ➡️ OTP Generator
 Generate secure one-time passwords for two-factor authentication.
 Creates random OTP codes with customizable length and expiry time.
-**Features:**
+
 - Secure random OTP generation
 - Customizable OTP length
 - Timer with expiry countdown
@@ -142,7 +142,7 @@ Creates random OTP codes with customizable length and expiry time.
 ## ➡️ Password Generator 2
 Advanced password generator with multiple customization options for security.
 Create strong passwords with various character sets and complexity levels.
-**Features:**
+
 - Multiple character set options
 - Password strength indicator
 - Copy to clipboard functionality
@@ -154,7 +154,7 @@ Create strong passwords with various character sets and complexity levels.
 ## ➡️ Password Generator
 Simple and effective password generator for creating secure passwords.
 Generate random passwords with customizable length and character types.
-**Features:**
+
 - Customizable password length
 - Include/exclude character types
 - One-click password generation
@@ -166,7 +166,7 @@ Generate random passwords with customizable length and character types.
 ## ➡️ QR Lite
 Generate QR codes for text, URLs, and other data formats instantly.
 Lightweight QR code generator with download and sharing options.
-**Features:**
+
 - Generate QR codes for various data types
 - Download QR codes as images
 - Clean and simple interface
@@ -178,7 +178,7 @@ Lightweight QR code generator with download and sharing options.
 ## ➡️ Random Quote Generator
 Get inspired with random motivational and famous quotes.
 Features a collection of quotes from various authors and categories.
-**Features:**
+
 - Random quote generation
 - Share quotes on social media
 - Favorite quotes collection
@@ -190,7 +190,7 @@ Features a collection of quotes from various authors and categories.
 ## ➡️ Rich Text Editor
 A feature-rich text editor with formatting options and document management.
 Create and edit documents with various text formatting and styling options.
-**Features:**
+
 - Rich text formatting (bold, italic, underline)
 - Font size and color customization
 - Export documents in multiple formats
@@ -202,7 +202,7 @@ Create and edit documents with various text formatting and styling options.
 ## ➡️ Text Encrypter
 Secure text encryption and decryption tool for protecting sensitive information.
 Uses advanced encryption algorithms to keep your text data safe and private.
-**Features:**
+
 - Text encryption and decryption
 - Multiple encryption algorithms
 - Secure key generation and management
@@ -214,7 +214,7 @@ Uses advanced encryption algorithms to keep your text data safe and private.
 ## ➡️ Text To Speech
 Convert written text into natural-sounding speech with voice options.
 Features multiple voice selections and speech rate controls for better accessibility.
-**Features:**
+
 - Text-to-speech conversion
 - Multiple voice options and languages
 - Adjustable speech rate and volume
@@ -227,7 +227,7 @@ Features multiple voice selections and speech rate controls for better accessibi
 Create shortened URLs for easy sharing and link management.
 Generate compact links with click tracking and analytics features.
 
-**Features:**
+
 - URL shortening and custom aliases
 - Click tracking and analytics
 - QR code generation for short links
@@ -239,11 +239,17 @@ Generate compact links with click tracking and analytics features.
 ## ➡️ Weather App
 Get real-time weather information and forecasts for any location.
 Features current conditions, hourly forecasts, and beautiful weather icons.
-**Features:**
+
 - Real-time weather data and forecasts
 - Location-based weather updates
 - Beautiful weather icons and animations
 
 ![screenshot](Weather%20App/screenshot.png)
 
+<br>
 
+## Contributions 🧑‍💻
+Contributions are welcome! Please feel free to submit issues and pull requests.
+
+## License 🪪
+This project is licensed under the [MIT License](LICENSE).
