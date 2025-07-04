@@ -1,20 +1,25 @@
-## Mini Web Development Projects
+# Web Development Projects
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-%231572B6?style=flat&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
+![Node.js](https://img.shields.io/badge/Node.js-339933?logo=nodedotjs&logoColor=white)
+![WebSocket](https://img.shields.io/badge/WebSocket-4A90E2?logo=websocket&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-06B6D4?logo=tailwindcss&logoColor=white)
+<br>
 ![Open Source](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)
 ![Contributions](https://img.shields.io/static/v1.svg?label=Contributions&message=Welcome&color=%23013220)
 ![Built By](https://img.shields.io/badge/Built%20by-Abhinav%20Kumar-0059b3)
 ![Maintained](https://img.shields.io/static/v1.svg?label=Maintained&message=Yes&color=red)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-%231572B6?style=flat&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
-![Repo Size](https://img.shields.io/github/repo-size/abhinavkumar2369/Mini-Web-Development-Projects)
-![Code Size](https://img.shields.io/github/languages/code-size/abhinavkumar2369/Mini-Web-Development-Projects)
-![Stars](https://img.shields.io/github/stars/abhinavkumar2369/Mini-Web-Development-Projects?style=flat&label=Stars&color=brightgreen)
-![Watchers](https://img.shields.io/github/watchers/abhinavkumar2369/Mini-Web-Development-Projects?style=flat&label=Watchers&color=blue)
-![Forks](https://img.shields.io/github/forks/abhinavkumar2369/Mini-Web-Development-Projects?style=flat&label=Forks&color=yellow)
-![Languages](https://img.shields.io/github/languages/count/abhinavkumar2369/Mini-Web-Development-Projects)
-![Last Commit](https://img.shields.io/github/last-commit/abhinavkumar2369/Mini-Web-Development-Projects)
-![Releases](https://img.shields.io/github/v/release/abhinavkumar2369/Mini-Web-Development-Projects)
+<br>
+![Repo Size](https://img.shields.io/github/repo-size/abhinavkumar2369/Web-Development-Projects)
+![Code Size](https://img.shields.io/github/languages/code-size/abhinavkumar2369/Web-Development-Projects)
+![Stars](https://img.shields.io/github/stars/abhinavkumar2369/Web-Development-Projects?style=flat&label=Stars&color=brightgreen)
+![Watchers](https://img.shields.io/github/watchers/abhinavkumar2369/Web-Development-Projects?style=flat&label=Watchers&color=blue)
+![Forks](https://img.shields.io/github/forks/abhinavkumar2369/Web-Development-Projects?style=flat&label=Forks&color=yellow)
+![Languages](https://img.shields.io/github/languages/count/abhinavkumar2369/Web-Development-Projects)
+![Last Commit](https://img.shields.io/github/last-commit/abhinavkumar2369/Web-Development-Projects)
+![Releases](https://img.shields.io/github/v/release/abhinavkumar2369/Web-Development-Projects)
 <br>
 
 
