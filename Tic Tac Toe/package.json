@@ -1,0 +1,32 @@
+{
+  "name": "tic-tac-toe-web-app",
+  "version": "1.0.0",
+  "description": "Tic Tac Toe web game with WebSocket multiplayer support",
+  "main": "index.html",
+  "scripts": {
+    "start": "node app.js",
+    "server": "node server.js",
+    "dev": "concurrently \"node app.js\" \"node server.js\"",
+    "web": "node app.js",
+    "websocket": "node server.js"
+  },
+  "keywords": [
+    "tic-tac-toe",
+    "web-game",
+    "websocket",
+    "multiplayer",
+    "javascript",
+    "nodejs"
+  ],
+  "author": "Abhinav Kumar",
+  "license": "MIT",
+  "dependencies": {
+    "ws": "^8.16.0"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

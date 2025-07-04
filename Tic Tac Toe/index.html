@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
+    <title>Tic Tac Toe</title>
+    <link rel="icon" href="Resources/game-icon.svg" type="image/svg+xml">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        violet: {
+                            light: '#a78bfa',
+                            DEFAULT: '#8b5cf6',
+                            dark: '#7c3aed',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        .cell {
+            transition: all 0.2s ease;
+        }
+        .cell:hover:not(.filled) {
+            background-color: rgba(139, 92, 246, 0.1);
+        }
+        .x-mark, .o-mark {
+            opacity: 0;
+            transform: scale(0.5);
+            transition: all 0.3s ease;
+        }
+        .filled .x-mark, .filled .o-mark {
+            opacity: 1;
+            transform: scale(1);
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-br from-gray-50 via-gray-100 to-violet-100 min-h-screen">
+    <!-- Welcome Screen -->
+    <div class="welcome-screen" id="welcome-screen">
+        <div class="bg-white rounded-2xl border border-gray-200 p-8 max-w-md w-full mx-4">
+            <div class="text-center">
+                <img src="Resources/game-icon.svg" alt="Game Icon" class="w-24 h-24 mx-auto mb-4">
+                <h2 class="text-2xl font-bold text-violet-600 mb-4">Tic Tac Toe</h2>
+                <p class="text-gray-600 mb-8">Welcome to Tic Tac Toe! Enjoy this classic game of strategy and fun. Let's play and see who wins!</p>
+                <img src="Resources/game.svg" alt="Tic Tac Toe" class="w-64 h-64 mx-auto mb-8">
+                <button id="start" class="bg-violet-600 text-white px-8 py-3 rounded-lg hover:bg-violet-700 transition">START</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rules Screen -->
+    <div class="play" id="play">
+        <div class="bg-white rounded-2xl border border-gray-200 p-8 max-w-md w-full mx-4">
+            <h1 class="text-2xl font-bold text-center text-violet-600 mb-6">RULES</h1>
+            <div class="rules-point space-y-4 text-gray-600 mb-8">
+                <ul class="list-none space-y-3">
+                    <li class="flex items-center">
+                        <div class="w-6 h-6 rounded-full bg-violet-100 flex items-center justify-center mr-3">
+                            <span class="text-violet-600 text-sm">1</span>
+                        </div>
+                        <span>Player 1 is 'X' and Player 2 is 'O'</span>
+                    </li>
+                    <li class="flex items-center">
+                        <div class="w-6 h-6 rounded-full bg-violet-100 flex items-center justify-center mr-3">
+                            <span class="text-violet-600 text-sm">2</span>
+                        </div>
+                        <span>Players take turns marking empty cells with their symbol</span>
+                    </li>
+                    <li class="flex items-center">
+                        <div class="w-6 h-6 rounded-full bg-violet-100 flex items-center justify-center mr-3">
+                            <span class="text-violet-600 text-sm">3</span>
+                        </div>
+                        <span>The first to align three symbols in a row, column, or diagonal wins</span>
+                    </li>
+                    <li class="flex items-center">
+                        <div class="w-6 h-6 rounded-full bg-violet-100 flex items-center justify-center mr-3">
+                            <span class="text-violet-600 text-sm">4</span>
+                        </div>
+                        <span>If all cells are filled without a winner, the game ends in a draw</span>
+                    </li>
+                    <li class="flex items-center">
+                        <div class="w-6 h-6 rounded-full bg-violet-100 flex items-center justify-center mr-3">
+                            <span class="text-violet-600 text-sm">5</span>
+                        </div>
+                        <span>Block opponent's moves while planning your winning sequences</span>
+                    </li>
+                    <li class="flex items-center">
+                        <div class="w-6 h-6 rounded-full bg-violet-100 flex items-center justify-center mr-3">
+                            <span class="text-violet-600 text-sm">6</span>
+                        </div>
+                        <span>Enjoy friendly competition!</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="flex justify-between">
+                <button id="about" class="bg-violet-600 text-white px-6 py-2 rounded-lg hover:bg-violet-700 transition">About</button>
+                <button id="play-game" class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition">Play</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Screen -->
+    <div class="about-this-project" id="about-this-project">
+        <div class="bg-white rounded-2xl border border-gray-200 p-8 max-w-md w-full mx-4">
+            <div class="flex justify-between items-center mb-6">
+                <h1 class="text-2xl font-bold text-violet-600">ABOUT</h1>
+                <button id="back-b1" class="bg-red-500 hover:bg-red-600 text-white p-2 rounded-full transition flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="space-y-4 text-gray-600 mb-8">
+                <div class="flex items-start">
+                    <div class="bg-violet-100 p-2 rounded-full mr-3 mt-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-violet-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                    </div>
+                    <p>Tic Tac Toe is an open-source, classic game where two players compete to form a row, column, or diagonal of their symbol.</p>
+                </div>
+                
+                <div class="flex items-start">
+                    <div class="bg-violet-100 p-2 rounded-full mr-3 mt-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-violet-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <p>Enjoy endless entertainment with friends and family.</p>
+                </div>
+                
+                <div class="flex items-start">
+                    <div class="bg-violet-100 p-2 rounded-full mr-3 mt-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-violet-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                        </svg>
+                    </div>
+                    <p>Simple rules make it accessible to players of all ages.</p>
+                </div>
+                
+                <div class="flex items-start">
+                    <div class="bg-violet-100 p-2 rounded-full mr-3 mt-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-violet-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                        </svg>
+                    </div>
+                    <p>Enhance your strategic thinking and have fun challenging your opponents.</p>
+                </div>
+                
+                <div class="flex items-start">
+                    <div class="bg-violet-100 p-2 rounded-full mr-3 mt-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-violet-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a4 4 0 112.76 3.77c.08-.65.14-1.3.14-1.77V6a4 4 0 00-8 0v7H4.5m19 7L16 20m-1-1v-3.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5V19h2c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-3c-.55 0-1.5-.45-1.5-1z" />
+                        </svg>
+                    </div>
+                    <p>Available for free, bringing timeless fun to your fingertips.</p>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-violet-500 to-violet-600 p-6 rounded-xl text-white">
+                <div class="text-center mb-4">
+                    <h3 class="font-bold text-lg">Contribute to this project</h3>
+                </div>
+                
+                <a href="https://github.com/abhinavkumar2369/Tic-Tac-Toe-Web-Electron-Js" target="_blank" 
+                   class="flex items-center justify-center text-white hover:text-white/80 py-2 px-4 mb-4 transition group">
+                    <img src="Resources/github-logo.svg" alt="Github-logo" class="w-6 h-6 mr-2 filter brightness-0 invert">
+                    <span>GitHub Repository</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                </a>
+                
+                <div class="flex items-center justify-center mt-3 text-sm">
+                    <span>Created by</span>
+                    <a href="https://abhinavkumar.dev" target="_blank" class="ml-2 font-medium hover:underline flex items-center">
+                        abhinavkumar.dev
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Screen -->
+    <div class="main" id="main">
+        <div class="w-full max-w-[470px] mx-auto p-4">
+            <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden">
+                <!-- Card Header -->
+                <div class="bg-gradient-to-r from-violet-500 to-violet-600 p-6 relative">
+                    <h2 class="text-white text-2xl font-bold text-center mb-1"> Tic Tac Toe</h2>
+                    <p class="text-violet-100 text-center" id="game-status">Player X's turn</p>
+                </div>
+                
+                <!-- Game Board -->
+                <div class="p-6">
+                    <div class="grid grid-cols-3 gap-3 mb-6" id="game">
+                        <!-- Cells will be generated by JavaScript -->
+                    </div>
+                    
+                    <!-- Score Board -->
+                    <div class="flex justify-center gap-8 mb-6 text-center">
+                        <div class="bg-violet-50 rounded-lg px-4 py-2">
+                            <p class="text-violet-800 font-medium">Player X</p>
+                            <p class="text-2xl font-bold text-violet-600" id="x-score">0</p>
+                        </div>
+                        <div class="bg-gray-50 rounded-lg px-4 py-2">
+                            <p class="text-gray-600 font-medium">Ties</p>
+                            <p class="text-2xl font-bold text-gray-500" id="ties">0</p>
+                        </div>
+                        <div class="bg-indigo-50 rounded-lg px-4 py-2">
+                            <p class="text-indigo-800 font-medium">Player O</p>
+                            <p class="text-2xl font-bold text-indigo-600" id="o-score">0</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Game Controls -->
+                    <div class="flex justify-center gap-4">
+                        <button id="back-play" class="py-2 px-4 bg-gray-200 hover:bg-gray-300 text-gray-700 rounded-lg transition">
+                            Back
+                        </button>
+                        <button id="reset" class="py-2 px-4 bg-violet-600 hover:bg-violet-700 text-white rounded-lg transition">
+                            Reset Game
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Winner Modal -->
+    <div id="winner-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-lg p-8 max-w-md w-full mx-4 border border-gray-200">
+            <div class="text-center">
+                <div id="winner-icon" class="mx-auto mb-4 w-16 h-16 flex items-center justify-center rounded-full"></div>
+                <h3 class="text-2xl font-bold text-gray-800 mb-2" id="winner-text">Player X Wins!</h3>
+                <p class="text-gray-600 mb-6">Congratulations on your victory!</p>
+                <div class="flex justify-center gap-4">
+                    <button id="close-modal-btn" class="py-2 px-4 bg-gray-200 hover:bg-gray-300 text-gray-700 rounded-lg transition">
+                        Close
+                    </button>
+                    <button id="play-again-btn" class="py-2 px-4 bg-violet-600 hover:bg-violet-700 text-white rounded-lg transition">
+                        Play Again
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Connection Modal -->
+    <div id="connection-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-lg p-8 max-w-md w-full mx-4 border border-gray-200">
+            <div class="text-center">
+                <div class="mx-auto mb-4 w-16 h-16 flex items-center justify-center rounded-full bg-violet-100">
+                    <svg class="w-8 h-8 text-violet-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-800 mb-2">Game Mode</h3>
+                <p class="text-gray-600 mb-6">Server connection available! How would you like to play?</p>
+                <div class="flex justify-center gap-4">
+                    <button id="play-local-btn" class="py-2 px-4 bg-gray-200 hover:bg-gray-300 text-gray-700 rounded-lg transition">
+                        Play Locally
+                    </button>
+                    <button id="play-online-btn" class="py-2 px-4 bg-violet-600 hover:bg-violet-700 text-white rounded-lg transition">
+                        Play Online
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Matchmaking Modal -->
+    <div id="matchmaking-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-lg p-8 max-w-md w-full mx-4 border border-gray-200">
+            <div class="text-center">
+                <div class="mx-auto mb-4 w-16 h-16 flex items-center justify-center rounded-full bg-indigo-100">
+                    <svg class="w-8 h-8 text-indigo-600 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-800 mb-2">Finding Opponent</h3>
+                <p class="text-gray-600 mb-6">Please wait while we connect you with another player...</p>
+                <div class="flex justify-center">
+                    <button id="cancel-matchmaking-btn" class="py-2 px-4 bg-red-500 hover:bg-red-600 text-white rounded-lg transition">
+                        Cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Online Game Info -->
+    <div id="online-game-info" class="fixed top-4 left-4 bg-white rounded-lg p-4 shadow-lg hidden">
+        <div class="flex items-center">
+            <div class="w-3 h-3 bg-green-500 rounded-full mr-2"></div>
+            <p class="text-sm font-medium">Online Mode: <span id="player-symbol">X</span></p>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
