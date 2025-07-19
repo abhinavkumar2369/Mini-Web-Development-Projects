@@ -228,6 +228,21 @@ Features multiple voice selections and speech rate controls for better accessibi
 
 <br>
 
+## ➡️ Tic Tac Toe
+A modern, interactive Tic Tac Toe game featuring both local and online multiplayer modes.
+Built with HTML, CSS, JavaScript, and Node.js with WebSocket support for real-time gameplay.
+
+- Local multiplayer for same-device gameplay
+- WebSocket multiplayer for real-time online matches
+- Clean, responsive UI with smooth animations
+- Game rules and instructions included
+
+![Local Home Screen](Tic%20Tac%20Toe/screenshot_home_local.png)
+![WebSocket Game Screen](Tic%20Tac%20Toe/screenhot_game_websocket.png)
+
+
+<br>
+
 ## ➡️ Url Shortener
 Create shortened URLs for easy sharing and link management.
 Generate compact links with click tracking and analytics features.
