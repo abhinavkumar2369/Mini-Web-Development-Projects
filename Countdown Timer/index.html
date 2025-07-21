@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer & Stopwatch</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">
+            <i class="fas fa-clock"></i>
+            Timer & Stopwatch
+        </h1>
+        
+        <!-- Mode Toggle -->
+        <div class="mode-toggle">
+            <button id="timerModeBtn" class="mode-btn active">
+                <i class="fas fa-hourglass-half"></i>
+                Countdown Timer
+            </button>
+            <button id="stopwatchModeBtn" class="mode-btn">
+                <i class="fas fa-stopwatch"></i>
+                Stopwatch
+            </button>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <!-- Timer Display Card -->
+            <div class="timer-card">
+                <div class="timer-display-wrapper">
+                    <div id="timeDisplay" class="time-display">00:05:00</div>
+                    <div id="millisecondsDisplay" class="milliseconds-display">000</div>
+                    <div class="timer-label">Ready to Start</div>
+                </div>
+                
+                <!-- Circular Progress Indicator -->
+                <div class="progress-container">
+                    <svg class="progress-circle" viewBox="0 0 120 120">
+                        <defs>
+                            <linearGradient id="progressGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <circle cx="60" cy="60" r="54" class="progress-track"></circle>
+                        <circle cx="60" cy="60" r="54" class="progress-bar" id="progressRing"></circle>
+                    </svg>
+                    <div class="progress-center">
+                        <span id="progressPercent">0%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Control Panel -->
+            <div class="control-panel">
+                <!-- Timer Setup Section -->
+                <div id="timerSection" class="timer-section active">
+                    <div class="section-header">
+                        <h3>Set Timer</h3>
+                    </div>
+                    <div class="time-inputs">
+                        <div class="input-field">
+                            <input type="number" id="hours" min="0" max="23" value="0">
+                            <label>Hours</label>
+                        </div>
+                        <div class="input-separator">:</div>
+                        <div class="input-field">
+                            <input type="number" id="minutes" min="0" max="59" value="5">
+                            <label>Minutes</label>
+                        </div>
+                        <div class="input-separator">:</div>
+                        <div class="input-field">
+                            <input type="number" id="seconds" min="0" max="59" value="0">
+                            <label>Seconds</label>
+                        </div>
+                    </div>
+                    
+                    <div class="quick-presets">
+                        <div class="presets-label">Quick Presets</div>
+                        <div class="preset-buttons">
+                            <button class="preset-btn" data-time="60">1m</button>
+                            <button class="preset-btn" data-time="300">5m</button>
+                            <button class="preset-btn" data-time="600">10m</button>
+                            <button class="preset-btn" data-time="900">15m</button>
+                            <button class="preset-btn" data-time="1800">30m</button>
+                            <button class="preset-btn" data-time="3600">1h</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stopwatch Section -->
+                <div id="stopwatchSection" class="timer-section">
+                    <div class="section-header">
+                        <h3>Lap Times</h3>
+                        <button id="clearLapsBtn" class="clear-btn">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                    </div>
+                    <div class="laps-area">
+                        <div id="lapsList" class="laps-list"></div>
+                        <div class="no-laps">No lap times recorded</div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="action-buttons">
+                    <button id="startBtn" class="action-btn primary">
+                        <i class="fas fa-play"></i>
+                        <span>Start</span>
+                    </button>
+                    <button id="pauseBtn" class="action-btn secondary" disabled>
+                        <i class="fas fa-pause"></i>
+                        <span>Pause</span>
+                    </button>
+                    <button id="resetBtn" class="action-btn tertiary">
+                        <i class="fas fa-refresh"></i>
+                        <span>Reset</span>
+                    </button>
+                    <button id="lapBtn" class="action-btn quaternary" disabled>
+                        <i class="fas fa-flag"></i>
+                        <span>Lap</span>
+                    </button>
+                </div>
+
+                <!-- Status Display -->
+                <div id="statusMessage" class="status-display"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Audio for timer completion -->
+    <audio id="timerCompleteSound" preload="auto">
+        <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+LyvmAcCDyE0/LSgC4FJHfH8N2QQAoUXrTp66hVFApGn+LyvmAcCDyE0/LSgC4FJHfH8N2QQAoUXrTp66hVFApGn+LyvmAcCDyE0/LSgC4FJHfH8N2QQAoUXrTp66hVFApGn+LyvmAcCDyE0/LSgC4FJHfH8N2QQAoUXrTp66hVFApGn+LyvmAcCDyE0/LSgC4FJHfH8N2QQAoUXrTp66hVFApGn+LyvmAcCDyE0/LSgC4FJHfH8N2QQAoUXrTp66hVFApGn+LyvmAcCDyE0/LSgC4FJHfH8N2QQAoUXrTp66hVFApGn+LyvmAcCDyE0/LSgC4FJHfH8N2QQAoUXrTp66hVFApGn+LyvmAcCDyE0/LSgC4FJHfH8N2QQAoUXrTp66hVFApGn+LyvmAcCDyE0/LSgC4FJHfH8N2QQAoUXrTp66hVFApGn+LyvmAcCDyE0/LSgC4FJHfH8N2QQAoUXrTp66hVFApGn+LyvmAcCDyE0/LSgC4FJHfH8N2QQAoUXrTp66hVFApGn+LyvmAcCDyE0/LSgC4FJHfH8N2QQAoUXrTp66hVFApGn+LyvmAcCDyE0/LSgC4FJHfH8N2QQAoUXrTp66hVFApGn+LyvmAcCDyE0/LSgC4FJHfH8N2QQAoUXrTp66hVFApGn+LyvmAcCDyE0/LSgC4FJHfH8N2QQAoUXrTp66hVFApGn+LyvmAcCDyE0/LSgC4FJHfH8N2QQAoUXrTp66hVFApGn+LyvmAcCDyE0/LSgC4FJHfH8N2QQAoUXrTp66hVFApGn+LyvmAcCDyE0/LSgC4FJHfH8N2QQAoUXrTp66hVFApGn+LyvmAcCDyE0/LSgC4FJHfH8N2QQAoUXrTp66hVFApGn+LyvmAcCDyE0/LSgC4FJHfH8N2QQAoUXrTp66hVFApGn+LyvmAcCDyE0/LSgC4FJHfH8N2QQAoUXrTp66hVFApGn+LyvmAcCDyE0/LSgC4FJHfH8N2QQAoUXrTp66hVFApGn+LyvmAcCDyE0/LSgC4FJHfH8N2QQAoUXrTp66hVFApGn+LyvmAcCDyE0/LSgC4FJHfH8N2QQAoUXrTp66hVFApGn+LyvmAcCDyE0/LSgC4FJHfH8N2QQAoUXrTp66hVFApGn+LyvmAcCDyE0/LSgC4FJHfH8N2QQAoUXrTp66hVFApGn+LyvmAcCDyE0/LSgC4F" type="audio/wav">
+    </audio>
+
+    <script src="index.js"></script>
+</body>
+</html>
