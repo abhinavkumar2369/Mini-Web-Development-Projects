@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Profile Viewer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+
+        <nav class="navbar">
+            <i class="fab fa-github"></i>
+            <h1>GitHub Profile Viewer</h1>
+        </nav>
+
+        <div class="search-container">
+            <div class="search-box">
+                <input type="text" id="username" placeholder="Enter GitHub username..." autocomplete="off">
+                <button id="searchBtn">
+                    <i class="fas fa-search"></i>
+                    Search
+                </button>
+            </div>
+        </div>
+
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Fetching profile data...</p>
+        </div>
+
+        <div class="error-message" id="errorMessage">
+            <i class="fas fa-exclamation-circle"></i>
+            <h3>User Not Found</h3>
+            <p>The GitHub user you're looking for doesn't exist or may have been deleted.</p>
+        </div>
+
+        <div class="profile-container" id="profileContainer">
+            <div class="profile-card">
+                <div class="profile-header">
+                    <img id="avatar" src="" alt="Profile Avatar">
+                    <div class="profile-info">
+                        <h2 id="name">User Name</h2>
+                        <p id="username-display">@username</p>
+                        <p id="bio">User bio goes here...</p>
+                        <div class="profile-meta">
+                            <span id="location"><i class="fas fa-map-marker-alt"></i> Location</span>
+                            <span id="company"><i class="fas fa-building"></i> Company</span>
+                            <span id="blog"><i class="fas fa-link"></i> Website</span>
+                            <span id="twitter"><i class="fab fa-twitter"></i> Twitter</span>
+                        </div>
+                        <div class="profile-dates">
+                            <span id="joinDate"><i class="fas fa-calendar-alt"></i> Joined GitHub</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profile-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" id="publicRepos">0</span>
+                        <span class="stat-label">Repositories</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="followers">0</span>
+                        <span class="stat-label">Followers</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="following">0</span>
+                        <span class="stat-label">Following</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="publicGists">0</span>
+                        <span class="stat-label">Gists</span>
+                    </div>
+                </div>
+
+                <div class="profile-actions">
+                    <a id="profileLink" href="#" target="_blank" class="btn btn-primary">
+                        <i class="fab fa-github"></i>
+                        View on GitHub
+                    </a>
+                    <button id="shareBtn" class="btn btn-secondary">
+                        <i class="fas fa-share-alt"></i>
+                        Share Profile
+                    </button>
+                </div>
+            </div>
+
+            <div class="repositories-section">
+                <h3><i class="fas fa-code-branch"></i> Popular Repositories</h3>
+                <div class="repos-container" id="reposContainer">
+                    <!-- Repository cards will be dynamically inserted here -->
+                </div>
+                <div class="view-all-repos">
+                    <a id="viewAllRepos" href="#" target="_blank" class="btn btn-outline">
+                        View All Repositories
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toastMessage">Profile URL copied to clipboard!</span>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
