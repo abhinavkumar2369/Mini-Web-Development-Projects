@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient Color Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .gradient-preview {
+            transition: background 0.3s ease;
+        }
+    </style>
+    <script src="index.js" defer></script>
+</head>
+<body class="bg-gray-100 min-h-screen py-8">
+    <div class="container mx-auto px-4 max-w-4xl">
+        <!-- Header -->
+        <h1 class="text-4xl font-bold text-center mb-2 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">
+            Gradient Color Generator
+        </h1>
+        <p class="text-center text-gray-600 mb-8">Create beautiful gradients and get CSS code instantly</p>
+
+        <!-- Main Content -->
+        <div class="bg-white rounded-lg shadow-lg p-6">
+            <!-- Controls Section -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <!-- Color Controls -->
+                <div class="space-y-4">
+                    <h3 class="text-lg font-semibold text-gray-800">Colors</h3>
+                    
+                    <div class="flex items-center space-x-3">
+                        <label class="text-sm font-medium text-gray-600">Color 1:</label>
+                        <input type="color" id="color1" value="#ff6b6b" 
+                               class="w-12 h-12 rounded-lg border-2 border-gray-300 cursor-pointer">
+                        <input type="text" id="color1-text" value="#ff6b6b" 
+                               class="px-3 py-2 border border-gray-300 rounded-md text-sm">
+                    </div>
+                    
+                    <div class="flex items-center space-x-3">
+                        <label class="text-sm font-medium text-gray-600">Color 2:</label>
+                        <input type="color" id="color2" value="#4ecdc4" 
+                               class="w-12 h-12 rounded-lg border-2 border-gray-300 cursor-pointer">
+                        <input type="text" id="color2-text" value="#4ecdc4" 
+                               class="px-3 py-2 border border-gray-300 rounded-md text-sm">
+                    </div>
+
+                    <!-- Add Color Button -->
+                    <button id="add-color" class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors">
+                        Add Color
+                    </button>
+                </div>
+
+                <!-- Direction Controls -->
+                <div class="space-y-4">
+                    <h3 class="text-lg font-semibold text-gray-800">Direction</h3>
+                    
+                    <div class="grid grid-cols-2 gap-2">
+                        <button class="direction-btn px-3 py-2 border border-gray-300 rounded-md text-sm hover:bg-gray-100 active" data-direction="to right">
+                            → Right
+                        </button>
+                        <button class="direction-btn px-3 py-2 border border-gray-300 rounded-md text-sm hover:bg-gray-100" data-direction="to left">
+                            ← Left
+                        </button>
+                        <button class="direction-btn px-3 py-2 border border-gray-300 rounded-md text-sm hover:bg-gray-100" data-direction="to bottom">
+                            ↓ Down
+                        </button>
+                        <button class="direction-btn px-3 py-2 border border-gray-300 rounded-md text-sm hover:bg-gray-100" data-direction="to top">
+                            ↑ Up
+                        </button>
+                        <button class="direction-btn px-3 py-2 border border-gray-300 rounded-md text-sm hover:bg-gray-100" data-direction="to bottom right">
+                            ↘ Bottom Right
+                        </button>
+                        <button class="direction-btn px-3 py-2 border border-gray-300 rounded-md text-sm hover:bg-gray-100" data-direction="to top left">
+                            ↖ Top Left
+                        </button>
+                    </div>
+
+                    <!-- Custom Angle -->
+                    <div class="mt-4">
+                        <label class="text-sm font-medium text-gray-600">Custom Angle:</label>
+                        <input type="range" id="angle-slider" min="0" max="360" value="90" 
+                               class="w-full mt-2">
+                        <span id="angle-value" class="text-sm text-gray-500">90°</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Preview Section -->
+            <div class="mb-6">
+                <h3 class="text-lg font-semibold text-gray-800 mb-3">Preview</h3>
+                <div id="gradient-preview" class="gradient-preview w-full h-48 rounded-lg border-2 border-gray-300"></div>
+            </div>
+
+            <!-- Code Output Section -->
+            <div class="space-y-4">
+                <h3 class="text-lg font-semibold text-gray-800">Generated Code</h3>
+                
+                <!-- CSS Code -->
+                <div>
+                    <label class="text-sm font-medium text-gray-600">CSS:</label>
+                    <div class="relative">
+                        <textarea id="css-output" readonly 
+                                  class="w-full p-3 bg-gray-50 border border-gray-300 rounded-md text-sm font-mono h-20 resize-none"></textarea>
+                        <button id="copy-css" class="absolute top-2 right-2 px-3 py-1 bg-blue-500 text-white text-xs rounded hover:bg-blue-600">
+                            Copy
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tailwind Code -->
+                <div>
+                    <label class="text-sm font-medium text-gray-600">Tailwind CSS Classes:</label>
+                    <div class="relative">
+                        <textarea id="tailwind-output" readonly 
+                                  class="w-full p-3 bg-gray-50 border border-gray-300 rounded-md text-sm font-mono h-20 resize-none"></textarea>
+                        <button id="copy-tailwind" class="absolute top-2 right-2 px-3 py-1 bg-green-500 text-white text-xs rounded hover:bg-green-600">
+                            Copy
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Preset Gradients -->
+            <div class="mt-8">
+                <h3 class="text-lg font-semibold text-gray-800 mb-3">Preset Gradients</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3" id="presets">
+                    <!-- -->
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
