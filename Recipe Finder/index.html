@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Finder</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-utensils"></i>
+                <span>Recipe Finder</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <!-- Hero Section -->
+            <section class="hero">
+                <!-- Search Box -->
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Search for recipes..." class="search-input">
+                    <button id="searchBtn" class="search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Loading -->
+            <div id="loading" class="loading hidden">
+                <div class="spinner"></div>
+                <p>Searching recipes...</p>
+            </div>
+
+            <!-- Recipe Results -->
+            <section id="results" class="results">
+                <h2 id="resultsTitle" class="results-title hidden">Search Results</h2>
+                <div id="recipeGrid" class="recipe-grid"></div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Recipe Modal -->
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <div class="modal-body">
+                <img id="modalImage" src="" alt="Recipe" class="modal-image">
+                <div class="modal-info">
+                    <h2 id="modalTitle">Recipe Title</h2>
+                    <div class="recipe-meta">
+                        <span id="modalTime"><i class="fas fa-clock"></i> 30 min</span>
+                        <span id="modalServings"><i class="fas fa-users"></i> 4 servings</span>
+                    </div>
+                    <p id="modalSummary">Recipe description...</p>
+                    <button id="viewRecipe" class="btn-primary">View Full Recipe</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="working.js"></script>
+</body>
+</html>
