@@ -1,12 +1,11 @@
-# 🚀 Todo React App
+## 🚀 Todo React App
 
 A modern, full-stack Todo application built with **React**, **MongoDB**, and **TailwindCSS**. Easily manage your daily tasks with priorities, categories, due dates, and a beautiful dashboard.
 
-<p align="center">
-  <img src="screenshot.png" alt="Todo React App Screenshot" width="700"/>
-</p>
 
----
+## 🖼️ Screenshots
+![screenshot](screenshot.png)
+
 
 ## ✨ Features
 
@@ -17,7 +16,7 @@ A modern, full-stack Todo application built with **React**, **MongoDB**, and **T
 - **Statistics Dashboard** – Track your productivity
 - **Responsive Design** – Works great on desktop and mobile
 
----
+
 
 ## ⚡ Quick Start
 
@@ -40,7 +39,7 @@ npx tailwindcss init -p
 npm start
 ```
 
----
+
 
 ## 🛠️ Usage
 
@@ -48,7 +47,7 @@ npm start
 - **Manage Todos**: Mark as complete, edit, or delete.
 - **Filter & Stats**: Use the filter bar and dashboard to stay organized.
 
----
+
 
 ## 📁 Project Structure
 
@@ -60,7 +59,7 @@ Todo React App/
 └── README.md
 ```
 
----
+
 
 ## 🔗 API Endpoints
 
@@ -73,7 +72,7 @@ Todo React App/
 | DELETE | `/api/todos/:id`             | Delete a todo       |
 | GET    | `/api/stats`                 | Fetch statistics    |
 
----
+
 
 ## 📄 License
 
